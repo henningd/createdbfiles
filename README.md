@@ -6,10 +6,11 @@ ZF2 Modul - Es wird ein Datensatz aus der angegebenen Tabelle gelesen und anhand
 * application.config.php anpassen
 
 # application.config.php
+```
 return array(
   'modules' => array(
     'Application',
     'Createdevdbfiles',
     ....
 ),
-
+```
