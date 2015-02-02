@@ -52,7 +52,7 @@ class IndexController extends AbstractActionController
                 $txt.= "    }";
                 $txt.= "\n";
                 $txt.= "\n";
-                $txt.= '    public get($id=0)';
+                $txt.= '    public function get($id=0)';
                 $txt.= "\n";
                 $txt.= "    {";
                 $txt.= "\n";
