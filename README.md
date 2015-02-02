@@ -15,3 +15,5 @@ return array(
     ....
 ),
 ```
+# Ausführen
+http://[meineprojekturl]/createdevdbfiles
