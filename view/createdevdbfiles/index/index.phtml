@@ -1,0 +1,34 @@
+<div class="container-fluid">
+ 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 col-md-6 col-md-offset-3">
+        	<h1 class="text-center login-title">Model Dateien erzeugen</h1>
+            <div class="account-wall">
+                <form action="/createdevdbfiles" method="post" class="form-signin">
+                    <input name="modulname" type="text" class="form-control" placeholder="Modul Name (Application)" value="">
+                    <input name="tablename" type="text" class="form-control" placeholder="DB Tabellen Name (pages)" value="">
+                    <input name="filename" type="text" class="form-control" placeholder="Dateiname (Pages)" value="">                
+                    <input type="hidden" name="redirect" value="/sysadmin" />
+        		    <br>    
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Dateien erzeugen</button>
+                </form>
+            </div>
+            <br>
+            <div class="mr_login_desc1">
+            <p>Es wird ein Datensatz aus der angegebenen Tabelle gelesen und anhand der Keys die entsprechenden Dateien für das Model Verzeichnis erstellt. Existieren Die Dateien bereits, so werden sie nicht überschrieben. <strong>Achtung: </strong>Es muss hierfür mindestens ein Datensatz in der Tabelle gespeichert sein. Ggf. zuerst einen Dummy Datensatz anlegen.</p>
+            <p><u>Beispiel</u></p>
+            <p>
+            Modul Name: Application<br>
+            DB Tabellen Name: pages<br>
+            Dateiname: Pages<br>
+            </p>
+            <p>Im Verzeichnis des Modules <strong>Application</strong> wird im Verzeichnis <strong>Model</strong> die Datei <strong>Pages.php</strong> und <strong>PagesTable.php</strong> angelegt.</p>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div> <!-- /content -->
