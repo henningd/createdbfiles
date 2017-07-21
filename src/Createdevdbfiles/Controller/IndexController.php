@@ -421,9 +421,9 @@ class IndexController extends AbstractActionController
             $txt.= "// In public function getServiceConfig 'factories' kopieren\n";
             $txt.= '\'\\'.$moduleName.'\Model\\'.$filename.'Table\' =>  function($sm) {';
             $txt.= "\n";
-            $txt.= '    $tableGateway = $sm->get(\'\\'.$filename.'TableGateway\');';
+            $txt.= '    $tableGateway = $sm->get(\''.$filename.'TableGateway\');';
             $txt.= "\n";
-            $txt.= '    $table = new \\'.$filename.'Table($tableGateway);';
+            $txt.= '    $table = new '.$filename.'Table($tableGateway);';
             $txt.= "\n";
             $txt.= '    return $table;';
             $txt.= "\n";
@@ -435,7 +435,9 @@ class IndexController extends AbstractActionController
             $txt.= "\n";
             $txt.= '    $resultSetPrototype = new ResultSet();';
             $txt.= "\n";
-            $txt.= '    $resultSetPrototype->setArrayObjectPrototype(new \\'.$filename.'());';
+            $txt.= '    $resultSetPrototype->setArrayObjectPrototype(new '.$filename.'());';
+            $txt.= "\n";
+            $txt.= '    return new TableGateway(\''.$table.'\', $dbAdapter, null, $resultSetPrototype);';
             $txt.= "\n";
             $txt.= '},';
             $txt.= "\n\n\n";
@@ -449,7 +451,7 @@ class IndexController extends AbstractActionController
             $txt.= 'use '.$moduleName.'\Model\\'.$filename.';';
             $txt.= "\n\n";
             $txt.= "// In Class kopieren\n";
-            $txt.= 'protected $'.$filenameLower.'eTable;';
+            $txt.= 'protected $'.$filenameLower.'Table;';
             $txt.= "\n\n";
             $txt.= "// In Fuss kopieren\n";
             $txt.= "public function ".$filenameLower."Table()";
